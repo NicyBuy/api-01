@@ -12,5 +12,6 @@ router.get('/home', ProjectController.home);
 router.get('/create1', ProjectController.createProduct);
 router.get('/getproducts', ProjectController.getProducts);
 router.get('/:id', ProjectController.oneProduct);
+router.get('/', ProjectController.def);
 
 module.exports = router;

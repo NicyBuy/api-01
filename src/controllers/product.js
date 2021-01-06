@@ -9,6 +9,9 @@ var controller = {
 
         //return res.status(200).send('fuck the free world');
     },
+    def: function(req, res){
+        return res.status(200).send('working bitches');
+    },
 
     createProduct: function (req, res) {
         Product.create({
