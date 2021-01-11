@@ -10,7 +10,7 @@ var controller = {
         //return res.status(200).send('fuck the free world');
     },
     def: function(req, res){
-        return res.status(200).send('working bitches yeah');
+        return res.status(200).send('Fuck the hello world');
     },
 
     createProduct: function (req, res) {
