@@ -135,6 +135,10 @@ var controller = {
         }
         
         
+    },
+
+    disablePage: function (req, res) {
+        res.render('disablepage', {title: 'signin'});
     }
 }
 

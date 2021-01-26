@@ -1,3 +1,14 @@
+window.addEventListener('load', async () => {
+    const token = localStorage.getItem('tokensito');
+    if(token){
+        alert('----YA inicio sesion---');
+        window.location.href = '/';
+    }
+});
+
+
+
+
 let botoncito = document.getElementById('si_form');
 //campos de texto
 let username = document.getElementById('inu')

@@ -9,6 +9,8 @@ color2:#A66556;*/
 @import './newprod.css';
 @import './toregister.css';
 @import './sigin.css';
+@import './disable.css';
+@import './index.css';
 :root {
     --c1: #BF344D;
     --c2:#011826;

@@ -16,10 +16,11 @@ window.addEventListener('load', async () => {
             if (res.data.auth == false) {
                 alert('no hay autentificacion');
                 window.location.href = '/tosignup';
+            } else{
+                //alert('verificacion VALIDA');
             }
         }).
         catch(err => console.log(err));
-        alert('verificacion VALIDA');
     }
 });
 
