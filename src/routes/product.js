@@ -11,7 +11,7 @@ var multiPart = require('connect-multiparty');
 
 router.get('/', ProjectController.def);
 router.get('/home', ProjectController.home);
-router.get('/tosignup', ProjectController.toregister);
+router.get('/tosignup', ProjectController.disablePage);
 router.get('/tosigin', ProjectController.tosigin);
 router.get('/newprod', ProjectController.enterProd);
 router.post('/verytok', ProjectController.verytok);
