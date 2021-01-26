@@ -1,0 +1,35 @@
+
+.nav_div_cont_nav{
+    height: 60px;
+    width: 100%;
+    background-color: var(--c3);
+}
+
+.nav_nav{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    top: 0;
+}
+
+.nav_lado1{
+    width: 100px;
+    height: 100%;
+    background-color: var(--c5);
+}
+
+.nav_lado2{
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-right: 20px;
+}
+
+.nav_link{
+    text-decoration: none;
+    color: white;
+    font-size: large;
+    margin: 0 10px;
+}
