@@ -1,12 +1,13 @@
 'use strict'
-var express = require('express');
-var bodyparser = require('body-parser');
-var app = express();
+let express = require('express');
+let bodyparser = require('body-parser');
+let app = express();
 const cors = require('cors');
 const path =  require('path');
 
 //archivos de rutas
-var project_routes = require('./routes/product');
+let project_routes = require('./routes/product');
+let store_routes = require('./routes/store');
 
 //middlewares
 app.use(bodyparser.urlencoded({extended: false}));
@@ -40,6 +41,7 @@ app.use((req, res, next) => {
 
 app.use(cors());
 app.use( '/', project_routes);
+//app.use('/', store_routes);
 
 
 

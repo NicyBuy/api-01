@@ -1,11 +1,7 @@
 'use strict'
 
-const Product = require('../models/product');
-const User = require('../models/user');
-const Matest = require('../models/matest');
-const Store = require('../models/store')
+const Store = require('../models/store');
 const fs = require('fs');
-const jwt = require('jsonwebtoken');
 
 
 
@@ -21,45 +17,6 @@ var controller = {
     
     enterProd: function (req, res, next) {
         res.render('newprod', {title: 'newprod'});
-    },
-
-    createProduct: function (req, res) {
-        Product.create({
-            title: 'nada1',
-            description: 'nada2',
-            precio: 23.23 
-        });
-        res.send("se termino de crear");
-
-    },
-
-    saveProject: function(req, res){
-        var product = new Product();
-        var params = req.body;
-        product.title = params.title;
-        product.price = params.price;
-        product.imgp = params.imgp;
-        product.description = params.description;
-        product.save((err, productStored) => {
-            if(err) return res.status(500).send({meesage: "hubo un error guardando macho"});
-
-            if(!productStored) return res.status(404).send({message: "no se pudo guardar weon"});
-
-            return res.status(200).send({product: productStored, message: "guardado correctamente"});
-        });
-    },
-
-    saveTest: function(req, res){
-        let newTest = new Matest();
-        let params = req.body;
-        //newTest.nombreTest = params.nombreTest;
-        newTest.save((err, testStored) => {
-            if(err) return res.status(500).send({meesage: "hubo un error guardando test"});
-
-            if(!testStored) return res.status(404).send({message: "no se pudo guardar el test"});
-
-            return res.status(200).send({test: testStored, message: "guardado correctamente"});
-        });
     },
 
     saveStore: function(req, res){

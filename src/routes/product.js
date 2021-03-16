@@ -1,7 +1,8 @@
 'use strict'
 
-var express = require('express');
-var ProjectController = require('../controllers/product');
+let  express = require('express');
+let  ProjectController = require('../controllers/product');
+let StoreController = require('../controllers/store');
 
 var router = express.Router();
 
@@ -14,6 +15,8 @@ router.get('/home', ProjectController.home);
 router.get('/tosignup', ProjectController.toregister);
 router.get('/tosigin', ProjectController.tosigin);
 router.get('/newprod', ProjectController.enterProd);
+router.post('/savestore', StoreController.saveStore);
+router.post('/savetest', ProjectController.saveTest);
 router.post('/verytok', ProjectController.verytok);
 router.get('/create1', ProjectController.createProduct);
 router.get('/getproducts', ProjectController.getProducts);
@@ -21,7 +24,6 @@ router.get('/:id', ProjectController.oneProduct);
 router.post('/save-project', ProjectController.saveProject);
 router.post('/signup', ProjectController.register);
 router.post('/signin', ProjectController.sigin);
-
 
 
 module.exports = router;
