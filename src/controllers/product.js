@@ -3,7 +3,6 @@
 const Product = require('../models/product');
 const User = require('../models/user');
 const Matest = require('../models/matest');
-const Store = require('../models/store')
 const fs = require('fs');
 const jwt = require('jsonwebtoken');
 
@@ -59,17 +58,6 @@ var controller = {
             if(!testStored) return res.status(404).send({message: "no se pudo guardar el test"});
 
             return res.status(200).send({test: testStored, message: "guardado correctamente"});
-        });
-    },
-
-    saveStore: function(req, res){
-        let newStore = new Store();
-        newStore.save((err, storeStored) => {
-            if(err) return res.status(500).send({meesage: "hubo un error guardando macho"});
-
-            if(!storeStored) return res.status(404).send({message: "no se pudo guardar weon"});
-
-            return res.status(200).send({store: storeStored, message: "guardado correctamente"});
         });
     },
 

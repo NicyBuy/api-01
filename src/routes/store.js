@@ -1,13 +1,13 @@
 'use strict'
 
-var express = require('express');
-var StoreController = require('../controllers/store');
+let express = require('express');
+let StoreController = require('../controllers/store');
 
-var router = express.Router();
+let router = express.Router();
 
 
-var multiPart = require('connect-multiparty');
-//var multiPartMidleWare = multiPart({uploadDir: './uploads'});
+let multiPart = require('connect-multiparty');
+//let multiPartMidleWare = multiPart({uploadDir: './uploads'});
 
 router.post('/savestore', StoreController.saveStore);
 

@@ -5,32 +5,32 @@ let app = express();
 const cors = require('cors');
 const path =  require('path');
 
-//archivos de rutas
+//archivos de rutas-------------------------------------------------
 let project_routes = require('./routes/product');
 let store_routes = require('./routes/store');
 
-//middlewares
+//middlewares-------------------------------------------------
 app.use(bodyparser.urlencoded({extended: false}));
 app.use(bodyparser.json());
 
-//static files
+//static files-------------------------------------------------
 app.use(express.static(path.join(__dirname, 'public')));
 
-//settings
+//settings-------------------------------------------------
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname+'/views'));
 //app.engine('html', require('ejs').renderFile);
 
 
 
-//CORS
-
+//CORS-------------------------------------------------
 var corsOptions = {
     origin: '*', // Reemplazar con dominio
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 app.use(cors(corsOptions));
-// Configurar cabeceras y cors
+
+// Configurar cabeceras y cors-------------------------------------------------
 app.use((req, res, next) => {
    res.header('Access-Control-Allow-Origin', '*');//en lugar del asterisco irian los dominios permitidos
    res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
@@ -39,9 +39,10 @@ app.use((req, res, next) => {
    next();
 }); 
 
+//RUTAS-------------------------------------------------
 app.use(cors());
 app.use( '/', project_routes);
-//app.use('/', store_routes);
+app.use('/', store_routes);
 
 
 
