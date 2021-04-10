@@ -17,7 +17,7 @@ router.get('/newprod', ProductController.enterProd);
 router.post('/savetest', ProductController.saveTest);
 router.post('/verytok', ProductController.verytok);
 router.get('/create1', ProductController.createProduct);
-router.get('/getproducts', ProductController.getProducts);
+//router.get('/getproducts', ProductController.getProducts);
 router.get('/:id', ProductController.oneProduct);
 router.post('/save-project', ProductController.saveProject);
 router.post('/signup', ProductController.register);

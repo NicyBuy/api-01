@@ -41,8 +41,8 @@ app.use((req, res, next) => {
 
 //RUTAS-------------------------------------------------
 app.use(cors());
-app.use( '/', project_routes);
-app.use('/', store_routes);
+app.use( '/api/products', project_routes);
+app.use('/api/stores', store_routes);
 
 
 
