@@ -8,6 +8,7 @@ const path =  require('path');
 //archivos de rutas-------------------------------------------------
 let project_routes = require('./routes/product');
 let store_routes = require('./routes/store');
+let users_routes = require('./routes/users');
 
 //middlewares-------------------------------------------------
 app.use(bodyparser.urlencoded({extended: false}));
@@ -41,6 +42,7 @@ app.use((req, res, next) => {
 
 //RUTAS-------------------------------------------------
 app.use(cors());
+app.use( '/api/users', users_routes);
 app.use( '/api/products', project_routes);
 app.use('/api/stores', store_routes);
 
