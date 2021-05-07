@@ -7,4 +7,4 @@ const ProductScheman = new Schema({
     description: String,
 });
 
-module.exports = model('Test', ProductScheman);
+module.exports = model('Product', ProductScheman);

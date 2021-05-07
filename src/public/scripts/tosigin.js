@@ -22,7 +22,7 @@ botoncito.addEventListener('submit', async (e) => {
 
     await axios({
         method: 'POST',
-        url: '/signin',
+        url: 'signin',
         data: {
             username: username.value,
             password: contra.value,

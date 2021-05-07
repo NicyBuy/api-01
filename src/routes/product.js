@@ -1,7 +1,7 @@
 'use strict'
 
-var express = require('express');
-var ProjectController = require('../controllers/product');
+let  express = require('express');
+let  ProductController = require('../controllers/product');
 
 var router = express.Router();
 
@@ -9,18 +9,14 @@ var router = express.Router();
 var multiPart = require('connect-multiparty');
 //var multiPartMidleWare = multiPart({uploadDir: './uploads'});
 
-router.get('/', ProjectController.def);
-router.get('/home', ProjectController.home);
-router.get('/tosignup', ProjectController.disablePage);
-router.get('/tosigin', ProjectController.tosigin);
-router.get('/newprod', ProjectController.enterProd);
-router.post('/verytok', ProjectController.verytok);
-router.get('/create1', ProjectController.createProduct);
-router.get('/getproducts', ProjectController.getProducts);
-router.get('/:id', ProjectController.oneProduct);
-router.post('/save-project', ProjectController.saveProject);
-router.post('/signup', ProjectController.register);
-router.post('/signin', ProjectController.sigin);
+router.get('/', ProductController.def);
+router.get('/home', ProductController.home);
+router.get('/newprod', ProductController.enterProd);
+router.post('/savetest', ProductController.saveTest);
+router.get('/create1', ProductController.createProduct);
+//router.get('/getproducts', ProductController.getProducts);
+router.get('/:id', ProductController.oneProduct);
+router.post('/save-project', ProductController.saveProject);
 
 
 

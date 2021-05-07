@@ -9,77 +9,7 @@ const jwt = require('jsonwebtoken');
 
 
 var controller = {
-    home: function (req, res) {
-        res.render('home', {title: 'home'});
-        //return res.status(200).send('fuck the hello world');
-    },
-
-    def: function(req, res){
-        res.render('index', {title: 'home'});
-    },
     
-    enterProd: function (req, res, next) {
-        res.render('newprod', {title: 'newprod'});
-    },
-
-    createProduct: function (req, res) {
-        Product.create({
-            title: 'nada1',
-            description: 'nada2',
-            precio: 23.23 
-        });
-        res.send("se termino de crear");
-
-    },
-
-    saveProject: function(req, res){
-        var product = new Product();
-        var params = req.body;
-        product.title = params.title;
-        product.price = params.price;
-        product.imgp = params.imgp;
-        product.description = params.description;
-        product.save((err, productStored) => {
-            if(err) return res.status(500).send({meesage: "hubo un error guardando macho"});
-
-            if(!productStored) return res.status(404).send({message: "no se pudo guardar weon"});
-
-            return res.status(200).send({product: productStored, message: "guardado correctamente"});
-        });
-    },
-
-    saveTest: function(req, res){
-        let newTest = new Matest();
-        let params = req.body;
-        //newTest.nombreTest = params.nombreTest;
-        newTest.save((err, testStored) => {
-            if(err) return res.status(500).send({meesage: "hubo un error guardando test"});
-
-            if(!testStored) return res.status(404).send({message: "no se pudo guardar el test"});
-
-            return res.status(200).send({test: testStored, message: "guardado correctamente"});
-        });
-    },
-
-    getProducts: async function (req, res) {
-        const result = await Product.find();
-        res.json(result);
-    },
-
-    oneProduct: function (req, res) {
-        var productId = req.params.id;
-        Product.findById(productId, (err, product) => {
-            if (err) return res.status(500).send({
-                meesage: "error al devolver el producto"
-            });
-            if (!product) return res.status(404).send({
-                message: "el producto no existe"
-            });
-            return res.status(200).send({
-                product
-            });
-        });
-    },
     register: async function (req, res, next) {
         const usuario = req.body;
         const user = await User.findOne({'username': usuario.username});
