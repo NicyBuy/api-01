@@ -20,7 +20,7 @@ const path =  require('path');
      credentials:true,
      allowedHeaders: 'Access-Control-Allow-Origin, Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method',
      origin: 'http://localhost:3000',
-     methods: 'GET, POST, OPTIONS, PUT, DELETE',
+     methods: ['GET', 'POST', 'OPTIONS', 'PUT', 'DELETE'],
  }));
 
 //archivos de rutas-------------------------------------------------
@@ -43,11 +43,11 @@ app.set('views', path.join(__dirname+'/views'));
 
 
 //CORS-------------------------------------------------
-var corsOptions = {
+/*var corsOptions = {
     origin: '*', // Reemplazar con dominio
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
-app.use(cors(corsOptions));
+app.use(cors(corsOptions));*/
 
 
 
