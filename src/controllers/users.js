@@ -49,6 +49,7 @@ var controller = {
             return false;
         } else{
             const pasval = await user.validPas(entrante.password)
+            //const pasval = await user.validate(entrante.password) // (entrante.password)
             if(pasval == false){
                 res.status(200).send({message: 'contra incorrecta', valid:false});
                 return false;
@@ -56,7 +57,7 @@ var controller = {
                 const token = jwt.sign({id: user._id}, process.env.SECRET, {
                     expiresIn: 60*60*24
                 });
-                res.status(200).send({message: 'entri', valid:true});
+                res.status(200).send({message: 'entri', valid:true, token:token});
             /*
             //res.header('Access-Control-Allow-Origin', 'https://koosapp.herokuapp.com');
             res.set('Access-Control-Allow-Origin', 'https://koosapp.herokuapp.com')
