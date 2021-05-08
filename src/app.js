@@ -19,7 +19,7 @@ const path =  require('path');
  app.use(cors({
      credentials:true,
      allowedHeaders: 'Access-Control-Allow-Origin, Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method',
-     origin: 'https://koosapp.herokuapp.com',
+     origin: true,  //'https://koosapp.herokuapp.com',
      methods: ['GET', 'POST', 'OPTIONS', 'PUT', 'DELETE'],
  }));
 
