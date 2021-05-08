@@ -2,7 +2,7 @@
 let express = require('express');
 let bodyparser = require('body-parser');
 let app = express();
-const cors = require('cors');
+let cors = require('cors');
 const path =  require('path');
 
 
@@ -52,7 +52,7 @@ app.use(cors(corsOptions));*/
 
 
 //RUTAS-------------------------------------------------
-app.use(cors());
+//app.use(cors());
 app.use( '/api', users_routes);
 app.use( '/api/products', project_routes);
 app.use('/api/stores', store_routes);
