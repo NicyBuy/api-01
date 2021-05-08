@@ -54,9 +54,10 @@ var controller = {
                 return false;
             }else{
                 res.status(200).send({message: 'entri', valid:true});
-            /*const token = jwt.sign({id: user._id}, process.env.SECRET, {
+            const token = jwt.sign({id: user._id}, process.env.SECRET, {
                 expiresIn: 60*60*24
             });
+            /*
             //res.header('Access-Control-Allow-Origin', 'https://koosapp.herokuapp.com');
             res.set('Access-Control-Allow-Origin', 'https://koosapp.herokuapp.com')
             next();
