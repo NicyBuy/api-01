@@ -57,7 +57,7 @@ var controller = {
                 expiresIn: 60*60*24
             });
             //res.json({message: 'alright, entra', auth: true, token});
-            res.header('Access-Control-Allow-Origin', 'http://localhost:3000')
+            res.header('Access-Control-Allow-Origin', '*')
             res.status(200).send({message: 'entrado', valid:true, token:token});
         }
     },
