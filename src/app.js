@@ -18,7 +18,7 @@ const path =  require('path');
  //app.use(cors({credentials: true, origin: 'http://localhost:3000'}));
  app.use(cors({
      credentials:true,
-     allowedHeaders: 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method',
+     allowedHeaders: 'Access-Control-Allow-Origin, Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method',
      origin: 'http://localhost:3000',
      methods: 'GET, POST, OPTIONS, PUT, DELETE',
  }));
