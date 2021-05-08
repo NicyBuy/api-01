@@ -40,6 +40,7 @@ app.use((req, res, next) => {
    res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
    next();
 }); 
+app.use(cors({credentials: true, origin: 'localhost:3000'}));
 
 //RUTAS-------------------------------------------------
 app.use(cors());
