@@ -59,8 +59,7 @@ var controller = {
             //res.header('Access-Control-Allow-Origin', 'https://koosapp.herokuapp.com');
             res.set('Access-Control-Allow-Origin', 'https://koosapp.herokuapp.com')
             next();
-            //res.status(200).send({message: 'entrado', valid:true, token:token});
-            res.json({message: 'alright, entra', auth: true, token});
+            res.status(200).send({message: 'entrado', valid:true, token:'aqui esta tu token'});
         }
     },
 
