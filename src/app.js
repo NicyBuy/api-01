@@ -15,19 +15,19 @@ const path = require('path');
     res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
     next();
  }); */
-/*app.use((req, res, next) => {
+app.use((req, res, next) => {
     res.append('Access-Control-Allow-Origin', ['https://koosapp.herokuapp.com']);
     res.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
     res.append('Access-Control-Allow-Headers', 'Content-Type');
     next();
-});*/
-app.use((req, res, next) => {
+});
+/* app.use((req, res, next) => {
     res.set({
         'Access-Control-Allow-Origin': 'koosapp.herokuapp.com',
         'Access-Control-Allow-Methods': 'DELETE,GET,PATCH,POST,PUT',
         'Access-Control-Allow-Headers': 'Content-Type,Authorization'
     });
-});
+}); */
 
 app.use(cors({
     credentials: true,
