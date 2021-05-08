@@ -56,7 +56,7 @@ var controller = {
             const token = jwt.sign({id: user._id}, process.env.SECRET, {
                 expiresIn: 60*60*24
             });
-            res.header('Access-Control-Allow-Origin', 'http://localhost:3000')
+            res.header('Access-Control-Allow-Origin', 'https://koosapp.herokuapp.com')
             //res.status(200).send({message: 'entrado', valid:true, token:token});
             res.json({message: 'alright, entra', auth: true, token});
         }
