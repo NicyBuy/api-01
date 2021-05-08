@@ -8,13 +8,14 @@ const path =  require('path');
 
 // Configurar cabeceras y cors-------------------------------------------------
 app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'http://localhost:3000/logins');//en lugar del asterisco irian los dominios permitidos
+    res.header('Access-Control-Allow-Origin', '*');//en lugar del asterisco irian los dominios permitidos
     res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
     res.header('Access-Control-Allow-Credentials', 'true');
     res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
     res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
     next();
  }); 
+ //app.use(cors({credentials: true, origin: 'http://localhost:3000'}));
  //app.use(cors({credentials: true, origin: 'http://localhost:3000'}));
 
 //archivos de rutas-------------------------------------------------
