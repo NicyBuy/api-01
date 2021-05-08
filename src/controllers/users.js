@@ -56,7 +56,8 @@ var controller = {
             const token = jwt.sign({id: user._id}, process.env.SECRET, {
                 expiresIn: 60*60*24
             });
-            res.json({message: 'alright, entra', auth: true, token});
+            //res.json({message: 'alright, entra', auth: true, token});
+            res.status(200).send({message: 'entrado', valid:true, token:token});
         }
     },
 
